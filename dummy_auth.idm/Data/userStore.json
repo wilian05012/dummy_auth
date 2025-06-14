@@ -1,0 +1,16 @@
+[
+  {
+    "id": "d1636008-46d4-4ed2-8518-edc8d3dab2fd",
+    "isActive": true,
+    "credentials": {
+      "password": "hashed_password",
+      "username": "johndoe"
+    },
+    "profile": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com"
+    },
+    "roles": ["user", "admin"]
+  }
+]

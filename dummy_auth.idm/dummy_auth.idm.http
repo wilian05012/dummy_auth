@@ -1,0 +1,12 @@
+@dummy_auth.idm_HostAddress = http://localhost:5189
+
+POST {{dummy_auth.idm_HostAddress}}/authentication/signin
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "johndoe",
+    "password": "hashed_password"
+}
+
+###
