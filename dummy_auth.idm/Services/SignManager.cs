@@ -7,7 +7,7 @@ namespace dummy_auth.idm.Services;
 public class SignManager {
     public struct SignInResult {
         public bool Success { get; set; }
-        public Guid? UserId { get; set; }
+        public SystemUser? User { get; set; }
     }
     public IUserManager UserManager { get; }
     public SignManager(IUserManager userManager) {
@@ -22,7 +22,7 @@ public class SignManager {
 
         return new SignInResult {
             Success = user != null,
-            UserId = user?.Id
+            User = user
         };
     }
 }

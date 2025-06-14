@@ -16,14 +16,17 @@ namespace dummy_auth.idm.Controllers {
 
 
         [HttpPost("signin")]
-        public IActionResult SignIn([FromBody] SystemUser.UserCredentials credentials) {
+        [Produces(System.Net.Mime.MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SignManager.SignInResult))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(SignManager.SignInResult))]
+        public ActionResult<SignManager.SignInResult> SignIn([FromBody] SystemUser.UserCredentials credentials) {
             if (credentials == null || string.IsNullOrEmpty(credentials.Username) || string.IsNullOrEmpty(credentials.Password)) {
                 return BadRequest("Invalid credentials.");
             }
 
             var result = _signManager.SignIn(credentials);
             if (result.Success) {
-                return Ok(_signManager.UserManager.GetUser(result.UserId!.Value));
+                return Ok(result);
             } else {
                 return Unauthorized(result);
             }
