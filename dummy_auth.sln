@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dummy_auth.client1", "dummy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dummy_auth.client2", "dummy_auth.client2\dummy_auth.client2.csproj", "{80B25A45-B5EA-4D62-84B6-0555B3B0F73C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dummy_auth.idm.client", "dummy_auth.idm.client\dummy_auth.idm.client.csproj", "{7DA670E4-FE87-446D-95EB-88F213895606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{80B25A45-B5EA-4D62-84B6-0555B3B0F73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80B25A45-B5EA-4D62-84B6-0555B3B0F73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80B25A45-B5EA-4D62-84B6-0555B3B0F73C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA670E4-FE87-446D-95EB-88F213895606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA670E4-FE87-446D-95EB-88F213895606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA670E4-FE87-446D-95EB-88F213895606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA670E4-FE87-446D-95EB-88F213895606}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
