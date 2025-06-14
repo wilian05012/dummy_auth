@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: Id Management API Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/dummy_auth.idm/dummy_auth.idm.csproj"
+        },
+        {
+            "name": "C#: Client App 1",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/dummy_auth.client1/dummy_auth.client1.csproj"
+        },
+        {
+            "name": "C#: Client App 2",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/dummy_auth.client2/dummy_auth.client2.csproj"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug all",
+            "configurations": [
+                "C#: Id Management API Debug",
+                "C#: Client App 1",
+                "C#: Client App 2"
+            ]
+        }
+    ]
+}
