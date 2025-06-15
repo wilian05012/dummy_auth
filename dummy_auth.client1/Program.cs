@@ -1,7 +1,26 @@
+using dummy_auth.client1;
+using dummy_auth.idm.client;
+
+using Microsoft.Extensions.Http;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddHttpClient("IdManagementHttpClient", client => {
+    var settingKey = $"{Constants.Settings.ApiSectionName}:BaseUrl";
+
+    client.BaseAddress = new Uri(builder.Configuration[settingKey] ?? throw new ApplicationException(message: $"Missing configuration value for '{settingKey}'"));
+
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+
+builder.Services.AddScoped<IdManagementApiClient>(sp => {
+    var httpClientFactory = sp.GetRequiredService<IHttpClientFactory>();
+    var httpClient = httpClientFactory.CreateClient("IdManagementHttpClient");
+    return new IdManagementApiClient(httpClient.BaseAddress!.ToString(), httpClient);
+});
 
 var app = builder.Build();
 
